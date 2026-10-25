@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+6<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -386,4 +386,20 @@ async function openProfile(index){
     `;
   }catch(error){
     content.textContent =
-      person[0] + " — "
+      person[0] + " — "document.getElementById("codeForm").addEventListener("submit", function(event){
+  event.preventDefault();
+
+  const code = document.getElementById("accessCode").value.trim();
+  const message = document.getElementById("codeMessage");
+
+  if(code === "2222"){
+    premiumUnlocked = true;
+
+    message.textContent = "✅ Password accepted! Premium profiles are unlocked.";
+
+    renderPremium();
+    renderCelebrities();
+  } else {
+    message.textContent = "❌ Incorrect password. Please try again.";
+  }
+});
