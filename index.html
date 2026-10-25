@@ -1,149 +1,312 @@
-6<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CelebrityLife | Celebrity Lifestyles</title>
+
+<title>CelebrityLife | Luxury Celebrity World</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#090909;color:white;font-family:Arial,sans-serif}
-header{background:#14110b;padding:24px 15px;text-align:center;border-bottom:3px solid #d8b56b}
-header h1{margin:0;color:#e5c47b;font-size:36px}
-header p{color:#c9c1b0}
-nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:15px}
-button,select{background:#211b10;color:#f5dda0;border:1px solid #d8b56b;border-radius:7px;padding:11px;cursor:pointer}
-button:hover{background:#493719}
-main{max-width:1100px;margin:auto;padding:15px}
-h2{color:#e5c47b}
-.panel{background:#141414;border:1px solid #403522;border-radius:12px;padding:18px;margin:18px 0}
-input{background:#090909;color:white;border:1px solid #d8b56b;padding:12px;border-radius:6px}
-.search{display:flex;gap:8px}
-.search input{flex:1;min-width:0}
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
-.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.card{background:#171717;border:1px solid #403522;border-radius:9px;overflow:hidden}
-.photo{height:170px;background:#292216;display:flex;align-items:center;justify-content:center;color:#e5c47b;font-size:35px;position:relative}
-.photo img{width:100%;height:100%;object-fit:cover;position:absolute}
-.cardbody{padding:13px}
-.card h3{color:#f5dda0;font-size:18px}
-.card p{font-size:13px;color:#c4bcad;line-height:1.5}
-.card button{width:100%}
-.lock{position:absolute;top:8px;right:8px;background:#090909;color:#f5dda0;padding:6px;font-size:10px;z-index:1}
-.muted{color:#b8b0a1;font-size:13px;line-height:1.6}
-.premium{border:1px solid #d8b56b;background:#211b10}
-footer{text-align:center;padding:25px;color:#b8b0a1;border-top:1px solid #403522}
-dialog{max-width:600px;width:90%;background:#141414;color:white;border:1px solid #d8b56b;border-radius:10px;padding:20px}
-dialog::backdrop{background:#000c}
-.profileImage{width:100%;max-height:250px;object-fit:cover}
-a{color:#e5c47b}
-@media(max-width:800px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:550px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:360px){.cards{grid-template-columns:1fr}.search{flex-direction:column}}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #090909;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background: #17130b;
+  text-align: center;
+  padding: 28px 15px;
+  border-bottom: 3px solid #d9b45b;
+}
+
+header h1 {
+  color: #e8c66f;
+  font-size: 36px;
+  margin: 0;
+}
+
+header p {
+  color: #d0c6ad;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 15px;
+}
+
+button, select, input {
+  padding: 12px;
+  border-radius: 7px;
+  border: 1px solid #d9b45b;
+  font-size: 14px;
+}
+
+button {
+  background: #282010;
+  color: #f4d98e;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #59451c;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px;
+}
+
+.panel {
+  background: #151515;
+  border: 1px solid #403522;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #e8c66f;
+}
+
+.muted {
+  color: #bdb5a5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.search {
+  display: flex;
+  gap: 10px;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  background: #090909;
+  color: white;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: #1b1b1b;
+  border: 1px solid #493b22;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-top {
+  min-height: 100px;
+  background: linear-gradient(135deg, #342916, #111111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e8c66f;
+  font-size: 35px;
+}
+
+.card-body {
+  padding: 12px;
+}
+
+.card h3 {
+  color: #f0d58b;
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.card p {
+  color: #c6c0b4;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.card button {
+  width: 100%;
+}
+
+.premium {
+  border: 1px solid #d9b45b;
+  background: #1d180e;
+}
+
+.badge {
+  color: #f4d98e;
+  font-size: 11px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #aaa08c;
+}
+
+#message {
+  color: #f4d98e;
+}
+
+dialog {
+  background: #151515;
+  color: white;
+  border: 1px solid #d9b45b;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  padding: 22px;
+}
+
+dialog::backdrop {
+  background: #000c;
+}
+
+@media(max-width: 800px) {
+  .cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media(max-width: 550px) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+}
+
+@media(max-width: 350px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>✨ CelebrityLife</h1>
-<p>Discover the lifestyles of famous people around the world</p>
+  <h1>✦ CelebrityLife</h1>
+  <p>Discover the world of famous people</p>
 </header>
 
 <nav>
-<button onclick="goTo('celebrities')">Celebrities</button>
-<button onclick="goTo('premium')">Premium Stars 🔒</button>
-<button onclick="showAll()">Show All</button>
+  <button onclick="showCategory('All')">Home</button>
+  <button onclick="showCategory('Football')">Football</button>
+  <button onclick="showCategory('Music')">Music</button>
+  <button onclick="showCategory('Film')">Film</button>
+  <button onclick="showCategory('Sport')">Sport</button>
+  <button onclick="showCategory('Creator')">Creators</button>
+  <button onclick="showCategory('Business')">Business</button>
 </nav>
 
 <main>
 
 <section class="panel">
-<h2>Discover Celebrity Lifestyles</h2>
-<p class="muted">
-Explore famous footballers, musicians, actors, business people and creators.
-Search for celebrities and discover public biographical information.
-</p>
+  <h2>🌍 Explore Celebrity Lifestyles</h2>
+  <p class="muted">
+    Explore famous footballers, musicians, actors, athletes,
+    creators and business leaders.
+  </p>
 
-<form class="search" id="searchForm">
-<input id="search" type="search" placeholder="Search a celebrity...">
-<button>Search</button>
-</form>
+  <form class="search" id="searchForm">
+    <input id="searchInput" type="search"
+           placeholder="Search celebrities...">
+    <button type="submit">Search</button>
+  </form>
 </section>
 
-<section id="premium" class="panel premium">
-<h2>👑 CelebrityLife Premium</h2>
-<p class="muted">
-These five celebrity profiles are reserved for premium members.
-A real payment provider and secure server must be connected before selling access.
-</p>
+<section class="panel premium" id="premium">
+  <h2>👑 Premium Celebrities</h2>
+  <p class="muted">
+    Enter your access code to unlock these five celebrity profiles.
+  </p>
 
-<div class="cards" id="premiumCards"></div>
+  <div class="cards" id="premiumCards"></div>
 
-<h3>Already have an access code?</h3>
-<form id="codeForm" class="search">
-<input id="accessCode" placeholder="Enter access code">
-<button>Unlock</button>
-</form>
-<p id="codeMessage" class="muted">
-Paid-code verification is not connected yet.
-</p>
-<button onclick="paymentInfo()">Get Premium Access</button>
-<p id="paymentMessage" class="muted">
-Payments are not configured. This website will not charge you.
-</p>
+  <h3>🔐 Enter Access Code</h3>
+
+  <form class="search" id="codeForm">
+    <input id="accessCode" type="password"
+           placeholder="Enter code">
+    <button type="submit">Unlock</button>
+  </form>
+
+  <p id="message" class="muted"></p>
 </section>
 
-<section id="celebrities" class="panel">
-<h2>🌍 Celebrity Directory</h2>
-<p class="muted" id="count"></p>
+<section class="panel" id="directory">
+  <h2>⭐ Celebrity Directory</h2>
+  <p class="muted" id="resultCount"></p>
 
-<div class="filters">
-<button onclick="setCategory('All')">All</button>
-<button onclick="setCategory('Football')">Football</button>
-<button onclick="setCategory('Music')">Music</button>
-<button onclick="setCategory('Film')">Film & TV</button>
-<button onclick="setCategory('Sport')">Sport</button>
-<button onclick="setCategory('Creator')">Creators</button>
-<button onclick="setCategory('Business')">Business</button>
-</div>
+  <div class="filters">
+    <button onclick="showCategory('All')">All</button>
+    <button onclick="showCategory('Football')">Football</button>
+    <button onclick="showCategory('Music')">Music</button>
+    <button onclick="showCategory('Film')">Film & TV</button>
+    <button onclick="showCategory('Sport')">Sports</button>
+    <button onclick="showCategory('Creator')">Creators</button>
+    <button onclick="showCategory('Business')">Business</button>
+  </div>
 
-<div class="cards" id="cards"></div>
+  <div class="cards" id="celebrityCards"></div>
 </section>
 
 <section class="panel">
-<h2>About CelebrityLife</h2>
-<p class="muted">
-CelebrityLife is an independent celebrity information directory.
-Biographies and photographs are requested from Wikipedia when available.
-Information about celebrity homes, cars, wealth and family can be uncertain
-or outdated. Details should be checked against reliable public sources.
-</p>
+  <h2>About CelebrityLife</h2>
+  <p class="muted">
+    CelebrityLife is a celebrity directory showcasing public
+    biographical information. This starter version uses sample
+    profile descriptions. It does not claim to provide verified
+    information about celebrities' private lives, homes, cars or wealth.
+  </p>
 </section>
 
 </main>
 
 <footer>
-CelebrityLife © 2026 | Black & Gold Edition
+  CelebrityLife © 2026 | Luxury Celebrity World
 </footer>
 
 <dialog id="profileDialog">
-<h2 id="profileName"></h2>
-<div id="profileContent" class="muted"></div>
-<br>
-<button onclick="document.getElementById('profileDialog').close()">Close</button>
+  <h2 id="profileTitle"></h2>
+  <p id="profileDetails"></p>
+  <button onclick="document.getElementById('profileDialog').close()">
+    Close
+  </button>
 </dialog>
 
 <script>
 const premiumNames = [
-"Cristiano Ronaldo",
-"Lionel Messi",
-"Kylian Mbappé",
-"Vinícius Júnior",
-"Michael Jackson"
+  "Cristiano Ronaldo",
+  "Lionel Messi",
+  "Kylian Mbappé",
+  "Vinícius Júnior",
+  "Michael Jackson"
 ];
 
-const celebrityNames = [
+const rawCelebrities = [
 ["Cristiano Ronaldo","Football","Portugal","Footballer"],
 ["Lionel Messi","Football","Argentina","Footballer"],
 ["Kylian Mbappé","Football","France","Footballer"],
@@ -157,13 +320,14 @@ const celebrityNames = [
 ["David Beckham","Football","England","Former footballer"],
 ["Ronaldinho","Football","Brazil","Former footballer"],
 ["Zinedine Zidane","Football","France","Former footballer"],
-["Kylian Mbappé","Football","France","Footballer"],
 ["Sadio Mané","Football","Senegal","Footballer"],
-["Vinícius Júnior","Football","Brazil","Footballer"],
 ["Kevin De Bruyne","Football","Belgium","Footballer"],
 ["Harry Kane","Football","England","Footballer"],
 ["Robert Lewandowski","Football","Poland","Footballer"],
 ["Son Heung-min","Football","South Korea","Footballer"],
+["Bukayo Saka","Football","England","Footballer"],
+["Jamal Musiala","Football","Germany","Footballer"],
+
 ["Taylor Swift","Music","United States","Singer"],
 ["Beyoncé","Music","United States","Singer"],
 ["Rihanna","Music","Barbados","Singer"],
@@ -181,7 +345,6 @@ const celebrityNames = [
 ["Lady Gaga","Music","United States","Singer"],
 ["Ariana Grande","Music","United States","Singer"],
 ["Sabrina Carpenter","Music","United States","Singer"],
-["Chris Brown","Music","United States","Singer"],
 ["Wizkid","Music","Nigeria","Singer"],
 ["Burna Boy","Music","Nigeria","Singer"],
 ["Davido","Music","Nigeria","Singer"],
@@ -194,6 +357,8 @@ const celebrityNames = [
 ["Kendrick Lamar","Music","United States","Rapper"],
 ["Nicki Minaj","Music","Trinidad and Tobago","Rapper"],
 ["Cardi B","Music","United States","Rapper"],
+["Tems","Music","Nigeria","Singer"],
+
 ["Dwayne Johnson","Film","United States","Actor"],
 ["Tom Cruise","Film","United States","Actor"],
 ["Leonardo DiCaprio","Film","United States","Actor"],
@@ -205,9 +370,6 @@ const celebrityNames = [
 ["Brad Pitt","Film","United States","Actor"],
 ["Angelina Jolie","Film","United States","Actor"],
 ["Jennifer Lopez","Film","United States","Actor and singer"],
-["Kim Kardashian","Film","United States","Media personality"],
-["Kylie Jenner","Film","United States","Entrepreneur"],
-["Kendall Jenner","Film","United States","Model"],
 ["Zendaya","Film","United States","Actor"],
 ["Tom Holland","Film","United Kingdom","Actor"],
 ["Jenna Ortega","Film","United States","Actor"],
@@ -217,21 +379,9 @@ const celebrityNames = [
 ["Pedro Pascal","Film","Chile","Actor"],
 ["Morgan Freeman","Film","United States","Actor"],
 ["Arnold Schwarzenegger","Film","Austria","Actor"],
-["MrBeast","Creator","United States","YouTuber"],
-["PewDiePie","Creator","Sweden","YouTuber"],
-["Khaby Lame","Creator","Italy","Creator"],
-["Charli D'Amelio","Creator","United States","Creator"],
-["Gordon Ramsay","Creator","United Kingdom","Chef"],
-["Oprah Winfrey","Creator","United States","Presenter"],
-["Elon Musk","Business","South Africa","Entrepreneur"],
-["Bill Gates","Business","United States","Entrepreneur"],
-["Mark Zuckerberg","Business","United States","Entrepreneur"],
-["Jeff Bezos","Business","United States","Entrepreneur"],
-["Warren Buffett","Business","United States","Investor"],
+
 ["Virat Kohli","Sport","India","Cricketer"],
 ["Rohit Sharma","Sport","India","Cricketer"],
-["Jack Ma","Business","China","Entrepreneur"],
-["Priyanka Chopra Jonas","Film","India","Actor"],
 ["Serena Williams","Sport","United States","Tennis player"],
 ["LeBron James","Sport","United States","Basketball player"],
 ["Stephen Curry","Sport","United States","Basketball player"],
@@ -244,169 +394,250 @@ const celebrityNames = [
 ["Roger Federer","Sport","Switzerland","Tennis player"],
 ["Simone Biles","Sport","United States","Gymnast"],
 ["Coco Gauff","Sport","United States","Tennis player"],
-["Jackie Appiah","Film","Ghana","Actor"],
-["Lupita Nyong'o","Film","Kenya","Actor"],
+["Kobe Bryant","Sport","United States","Former basketball player"],
+
+["MrBeast","Creator","United States","YouTuber"],
+["PewDiePie","Creator","Sweden","YouTuber"],
+["Khaby Lame","Creator","Italy","Creator"],
+["Charli D'Amelio","Creator","United States","Creator"],
+["Gordon Ramsay","Creator","United Kingdom","Chef"],
+["Oprah Winfrey","Creator","United States","Presenter"],
 ["Trevor Noah","Creator","South Africa","Comedian"],
-["Tems","Music","Nigeria","Singer"],
-["Ayra Starr","Music","Nigeria","Singer"]
+["Lilly Singh","Creator","Canada","Creator"],
+["Mark Rober","Creator","United States","YouTuber"],
+["Emma Chamberlain","Creator","United States","Creator"],
+
+["Elon Musk","Business","South Africa","Entrepreneur"],
+["Bill Gates","Business","United States","Entrepreneur"],
+["Mark Zuckerberg","Business","United States","Entrepreneur"],
+["Jeff Bezos","Business","United States","Entrepreneur"],
+["Warren Buffett","Business","United States","Investor"],
+["Jack Ma","Business","China","Entrepreneur"],
+["Bernard Arnault","Business","France","Business leader"],
+["Mukesh Ambani","Business","India","Business leader"],
+["Sara Blakely","Business","United States","Entrepreneur"],
+["Richard Branson","Business","United Kingdom","Entrepreneur"]
 ];
 
-let currentCategory = "All";
-let searchText = "";
+const celebrities = rawCelebrities.map((person, index) => ({
+  id: index,
+  name: person[0],
+  category: person[1],
+  country: person[2],
+  profession: person[3]
+}));
+
+let activeCategory = "All";
+let searchTerm = "";
 let premiumUnlocked = false;
 
-function goTo(id){
-  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+function escapeHTML(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[character]);
 }
 
-function setCategory(category){
-  currentCategory = category;
-  renderCelebrities();
-  goTo("celebrities");
+function isPremium(person) {
+  return premiumNames.includes(person.name);
 }
 
-function showAll(){
-  currentCategory = "All";
-  searchText = "";
-  document.getElementById("search").value = "";
-  renderCelebrities();
-}
-
-function isPremium(name){
-  return premiumNames.includes(name);
-}
-
-function createCard(person, index, premiumSection=false){
-  const locked = isPremium(person[0]) && !premiumUnlocked;
+function createCard(person) {
+  const locked = isPremium(person) && !premiumUnlocked;
+  const initial = escapeHTML(person.name.charAt(0));
 
   return `
     <article class="card">
-      <div class="photo" id="photo-${index}">
-        ✦
-        ${locked ? '<span class="lock">🔒 PREMIUM</span>' : ""}
-      </div>
-      <div class="cardbody">
-        <h3>${person[0]}</h3>
-        <p>${person[3]} · ${person[2]}</p>
-        <button onclick="openProfile(${index})">
+      <div class="card-top">${initial}</div>
+      <div class="card-body">
+        <h3>${escapeHTML(person.name)}</h3>
+        <p>${escapeHTML(person.profession)}</p>
+        <p>${escapeHTML(person.country)}</p>
+        <p class="badge">
+          ${locked ? "🔒 PREMIUM PROFILE" : escapeHTML(person.category)}
+        </p>
+        <button onclick="openProfile(${person.id})">
           ${locked ? "Unlock Profile" : "View Profile"}
         </button>
       </div>
-    </article>`;
+    </article>
+  `;
 }
 
-function renderPremium(){
-  const premiumPeople = celebrityNames.filter(p => isPremium(p[0]));
+function renderPremium() {
+  const premiumPeople = celebrities.filter(isPremium);
+
   document.getElementById("premiumCards").innerHTML =
-    premiumPeople.map(p => createCard(p, celebrityNames.indexOf(p))).join("");
-  premiumPeople.forEach(p => loadPhoto(p, celebrityNames.indexOf(p)));
+    premiumPeople.map(createCard).join("");
 }
 
-function renderCelebrities(){
-  const filtered = celebrityNames.filter(p => {
+function renderCelebrities() {
+  const filtered = celebrities.filter(person => {
     const matchesCategory =
-      currentCategory === "All" || p[1] === currentCategory;
-    const matchesSearch =
-      p.join(" ").toLowerCase().includes(searchText.toLowerCase());
-    return matchesCategory && matchesSearch;
+      activeCategory === "All" ||
+      person.category === activeCategory;
+
+    const searchable =
+      (person.name + " " + person.country + " " +
+       person.profession + " " + person.category).toLowerCase();
+
+    return matchesCategory && searchable.includes(searchTerm);
   });
 
-  document.getElementById("count").textContent =
-    filtered.length + " celebrity entries";
+  document.getElementById("resultCount").textContent =
+    "Showing " + filtered.length + " celebrity profiles";
 
-  document.getElementById("cards").innerHTML =
-    filtered.map(p => createCard(p, celebrityNames.indexOf(p))).join("");
-
-  filtered.forEach(p => loadPhoto(p, celebrityNames.indexOf(p)));
+  document.getElementById("celebrityCards").innerHTML =
+    filtered.map(createCard).join("");
 }
 
-const photoLoaded = new Set();
+function showCategory(category) {
+  activeCategory = category;
+  renderCelebrities();
 
-async function loadPhoto(person, index){
-  if(photoLoaded.has(person[0])) return;
-  photoLoaded.add(person[0]);
-
-  try{
-    const url =
-      "https://en.wikipedia.org/api/rest_v1/page/summary/" +
-      encodeURIComponent(person[0].replace(/ /g, "_"));
-
-    const response = await fetch(url);
-    if(!response.ok) return;
-
-    const data = await response.json();
-    const box = document.getElementById("photo-" + index);
-
-    if(box && data.thumbnail && data.thumbnail.source){
-      const img = document.createElement("img");
-      img.src = data.thumbnail.source;
-      img.alt = person[0];
-      img.onerror = () => img.remove();
-      box.prepend(img);
-    }
-  }catch(error){}
+  document.getElementById("directory").scrollIntoView({
+    behavior: "smooth"
+  });
 }
 
-async function openProfile(index){
-  const person = celebrityNames[index];
+function openProfile(id) {
+  const person = celebrities.find(item => item.id === id);
 
-  if(isPremium(person[0]) && !premiumUnlocked){
-    document.getElementById("paymentMessage").textContent =
-      "This profile is locked. A real payment provider and secure server must be connected to unlock it.";
-    goTo("premium");
+  if (!person) return;
+
+  if (isPremium(person) && !premiumUnlocked) {
+    document.getElementById("message").textContent =
+      "This profile is locked. Enter the premium access code above.";
+    document.getElementById("premium").scrollIntoView({
+      behavior: "smooth"
+    });
     return;
   }
 
-  const dialog = document.getElementById("profileDialog");
-  document.getElementById("profileName").textContent = person[0];
+  document.getElementById("profileTitle").textContent = person.name;
 
-  const content = document.getElementById("profileContent");
-  content.textContent = "Loading public biography...";
-  dialog.showModal();
+  document.getElementById("profileDetails").textContent =
+    person.name + " is a " + person.profession +
+    " associated with " + person.country + ". " +
+    "This starter profile contains basic directory information. " +
+    "More verified public information can be added later.";
 
-  try{
-    const url =
-      "https://en.wikipedia.org/api/rest_v1/page/summary/" +
-      encodeURIComponent(person[0].replace(/ /g, "_"));
+  document.getElementById("profileDialog").showModal();
+}
 
-    const response = await fetch(url);
-    if(!response.ok) throw new Error("Biography unavailable");
+document.getElementById("searchForm").addEventListener("submit", event => {
+  event.preventDefault();
 
-    const data = await response.json();
+  searchTerm =
+    document.getElementById("searchInput").value.trim().toLowerCase();
 
-    content.innerHTML = `
-      <p><b>Profession:</b> ${person[3]}</p>
-      <p><b>Country:</b> ${person[2]}</p>
-      ${data.thumbnail ? `<img class="profileImage" src="${data.thumbnail.source}" alt="">` : ""}
-      <p>${data.extract || "No public biography is available."}</p>
-      ${data.content_urls?.desktop?.page
-        ? `<p><a href="${data.content_urls.desktop.page}" target="_blank" rel="noopener">Read full biography</a></p>`
-        : ""}
-      <p>Information comes from public sources and may not always be current.</p>
-    `;
-  }catch(error){
-    content.textContent =
-      person[0] + " — "document.getElementById("codeForm").addEventListener("submit", function(event){
+  activeCategory = "All";
+  renderCelebrities();
+
+  document.getElementById("directory").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+document.getElementById("codeForm").addEventListener("submit", event => {
   event.preventDefault();
 
   const code = document.getElementById("accessCode").value.trim();
-  const message = document.getElementById("codeMessage");
 
-  if(code === "2222"){
+  if (code === "2222") {
     premiumUnlocked = true;
 
-    message.textContent = "✅ Password accepted! Premium profiles are unlocked.";
+    document.getElementById("message").textContent =
+      "✅ Code accepted! The premium profiles are unlocked.";
 
-    try {
-  renderPremium();
-  renderCelebrities();
-} catch (error) {
-  document.getElementById("cards").innerHTML =
-    "<p style='color:white'>Unable to load celebrities. Please refresh the page.</p>";
-
-  console.error("Celebrity display error:", error);
-}
+    renderPremium();
+    renderCelebrities();
   } else {
-    message.textContent = "❌ Incorrect password. Please try again.";
+    document.getElementById("message").textContent =
+      "❌ Incorrect code. Please try again.";
   }
 });
+
+renderPremium();
+renderCelebrities();
+</script>
+
+</body>
+</html><section class="ronaldo-hero">
+  <div class="ronaldo-content">
+    <span class="ronaldo-label">⭐ FEATURED LEGEND</span>
+    <h1>CRISTIANO RONALDO</h1>
+    <p>Five-time Ballon d'Or winner. A football legend known around the world.</p>
+    <button onclick="openRonaldo()">Discover Ronaldo</button>
+    <br><br>
+    <a href="https://www.independent.co.uk/sport/football/cristiano-ronaldo-manchester-united-city-b1909888.html"
+       target="_blank" rel="noopener">
+      Read the football story →
+    </a>
+  </div>
+</section>.ronaldo-hero {
+min-height: 420px;
+display: flex;
+align-items: center;
+padding: 35px;
+margin-bottom: 25px;
+border: 1px solid #d9b45b;
+border-radius: 15px;
+background:
+linear-gradient(90deg, #090909 5%, rgba(9,9,9,.75) 55%, rgba(9,9,9,.2)),
+url('ronaldo.jpg') center 25% / cover no-repeat,
+#21180a;
+}
+
+.ronaldo-content {
+max-width: 550px;
+}
+
+.ronaldo-label {
+color: #e8c66f;
+font-weight: bold;
+letter-spacing: 3px;
+}
+
+.ronaldo-hero h1 {
+color: #f0d58b;
+font-size: clamp(30px, 6vw, 55px);
+margin: 18px 0;
+}
+
+.ronaldo-hero p {
+color: #ffffff;
+line-height: 1.7;
+}
+
+.ronaldo-hero button {
+background: #d9b45b;
+color: #090909;
+padding: 12px 22px;
+border: none;
+border-radius: 6px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.ronaldo-hero a {
+color: #e8c66f;
+}
+
+@media (max-width: 500px) {
+.ronaldo-hero {
+padding: 22px;
+min-height: 350px;
+}
+}function openRonaldo() {
+const ronaldo = celebrities.find(
+person => person.name === "Cristiano Ronaldo"
+);
+
+if (ronaldo) {
+openProfile(ronaldo.id);
+}
+}
