@@ -397,8 +397,15 @@ async function openProfile(index){
 
     message.textContent = "✅ Password accepted! Premium profiles are unlocked.";
 
-    renderPremium();
-    renderCelebrities();
+    try {
+  renderPremium();
+  renderCelebrities();
+} catch (error) {
+  document.getElementById("cards").innerHTML =
+    "<p style='color:white'>Unable to load celebrities. Please refresh the page.</p>";
+
+  console.error("Celebrity display error:", error);
+}
   } else {
     message.textContent = "❌ Incorrect password. Please try again.";
   }
